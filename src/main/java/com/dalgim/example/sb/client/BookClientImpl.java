@@ -18,7 +18,7 @@ public class BookClientImpl implements BookClient {
 
     @Override
     public void getAllBook() {
-        ResponseEntity<Collection> forEntity = restTemplate.getForEntity("http://localhost:8082/api/book/all", Collection.class);
+        ResponseEntity<Collection> forEntity = restTemplate.getForEntity("https://localhost:8443/api/book/all", Collection.class);
         System.out.println();
     }
 }

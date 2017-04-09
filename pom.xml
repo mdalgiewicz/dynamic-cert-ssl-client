@@ -38,11 +38,13 @@
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
 		<dependency>
-			<groupId>com.dalgim.example.sb</groupId>
-			<artifactId>dynamic-cert-ssl-server</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5.1</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
