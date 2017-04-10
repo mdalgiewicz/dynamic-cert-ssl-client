@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>dynamic-cert-ssl-client</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Example of rest client for dynamic selected certificate to ssl connection</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -22,6 +22,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+
+		<guava.version>21.0</guava.version>
+		<apache.htttp.version>4.5.1</apache.htttp.version>
 	</properties>
 
 	<dependencies>
@@ -38,12 +41,17 @@
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
-			<version>4.5.1</version>
+			<version>${apache.htttp.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${guava.version}</version>
+		</dependency>
+
 
 		<dependency>
 			<groupId>org.projectlombok</groupId>

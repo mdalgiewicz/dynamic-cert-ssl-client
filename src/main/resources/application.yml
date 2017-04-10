@@ -1,2 +1,11 @@
+client:
+  ssl:
+    keystore: C:\client-keystore.jks
+    keystore-pass: password
+    keystore-key-pass: password
+    truststore: C:\client-truststore.jks
+    truststore-pass: password
+    trust-all: false
+  producer-address: https://localhost:8443/api/
 server:
   port: 8081

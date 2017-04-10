@@ -1,5 +1,6 @@
-package com.dalgim.example.sb.config;
+package com.dalgim.example.sb.ssl.api;
 
+import com.dalgim.example.sb.ssl.exception.SSLConfigurationRuntimeException;
 import javax.net.ssl.X509KeyManager;
 import java.net.Socket;
 import java.security.Principal;
@@ -7,7 +8,7 @@ import java.security.PrivateKey;
 import java.security.cert.X509Certificate;
 
 /**
- * Created by dalgim on 09.04.2017.
+ * Created by Mateusz Dalgiewicz on 09.04.2017.
  */
 public class AliasX509KeyManager implements X509KeyManager {
     private X509KeyManager sourceKeyManager;
@@ -31,17 +32,12 @@ public class AliasX509KeyManager implements X509KeyManager {
                 }
             }
         }
-        throw new RuntimeException("No valid aliases found!");
+        throw new SSLConfigurationRuntimeException("No valid aliases found!");
     }
 
-    /**
-     * Funkcja pobiera certyfikat urzędu dla aktualnie zalogowanego urzędnika.
-     * Certyfikat jest używane do nawiązania połączenia SSL.
-     * @return Alias certyfikatu urzędu.
-     */
     private String getCertificateAlias() {
         return certificateAliasService.findCertificateAlias()
-                .orElseThrow(() -> new RuntimeException("Certificate alias cannot be null or empty!"));
+                .orElseThrow(() -> new SSLConfigurationRuntimeException("Certificate alias cannot be null or empty!"));
     }
 
     public String chooseServerAlias(String keyType, Principal[] issuers, Socket socket) {

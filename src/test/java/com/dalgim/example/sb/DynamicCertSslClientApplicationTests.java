@@ -1,6 +1,6 @@
 package com.dalgim.example.sb;
 
-import com.dalgim.example.sb.client.BookClient;
+import com.dalgim.example.sb.client.RestApiClient;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +12,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class DynamicCertSslClientApplicationTests {
 
 	@Autowired
-	BookClient bookClient;
+    RestApiClient restApiClient;
 
 	@Test
 	public void contextLoads() {
-		bookClient.getAllBook();
+		restApiClient.connect();
 	}
 
 }
