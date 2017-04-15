@@ -31,6 +31,7 @@ server:
 
 **trust-all** - When parameter is set to *true* it means client will trust all server with ssl connection, it is good for test when we not contain server certificate but for production this way is not recommended.
  When paramater is set to *false* then we must contains server certificate in truststore otherwise the ssl connection wont work.
+<br/>
 **keystore-key-pass** - By default ssl connection is getting uses one client certificate but in our case we have more then one certificate and we must set the same password for all of them it is required to load key manager factory properly.
 
 ### Building and running application
